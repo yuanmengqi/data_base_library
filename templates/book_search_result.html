@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="/static/bs/css/bootstrap.css">
+    <style>
+        .container{
+            margin-top: 100px;
+        }
+        .btn{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-md-offset-7">
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>书名</th>
+                            <th>作者</th>
+                            <th>出版社</th>
+                            <th>出版日期</th>
+                            <th>类别</th>
+                            <th>封面图片</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% if book %}
+                            <tr>
+                                <td>{{ book.name }}</td>
+                                <td>{{ book.author }}</td>
+                                <td>{{ book.publisher }}</td>
+                                <td>{{ book.publish_date|date:'Y-m-d' }}</td>
+                                <td>{{ book.catagoery }}</td>
+                                <td><img src="{{ book.picture.url }}" width="60px" height="60px"></td>
+                            </tr>
+                        {% else %}
+                            <tr>
+                                <td colspan="6">{{ error_message }}</td>
+                            </tr>
+                        {% endif %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <a href="{% url 'book_search' %}" class="btn btn-primary">返回</a>
+    <a href="/book_borrows/{{ book.id }}/{{ username.username }}/" class="btn btn-info">借书</a>
+    <a href="/book_returns/{{ book.id }}/{{ username.username }}/" class="btn btn-info">还书</a>
+</body>
+</html>

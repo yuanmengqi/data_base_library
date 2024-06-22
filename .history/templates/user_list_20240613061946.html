@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图书馆管理系统</title>
+    <link rel="stylesheet" href="/static/bs/css/bootstrap.css">
+    <script>TinyMCE.init({ selector:'textarea.content' });</script> 
+    <style>
+        .container{
+            margin-top:100px;
+        }
+        .btn{
+           margin-top:10px;
+        }
+    </style>
+</head>
+<body>
+
+<center> <h3>查看用户信息</h3> </center>
+
+<center>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 col-md-offset-7">
+            <table class="table table-striped table-bordered">
+              <thead>
+                <tr>
+                  <th>姓名</th>
+                  <th>密码</th>
+                  <th>邮箱</th>
+                  <th>手机号</th>
+                  <th>借书数量</th>
+                  <th>当前是否允许借书</th>
+                  <th>专业-班级</th>
+                  <th></th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+              {% for user in user_list %}
+                <tr>
+                  <td>{{ user.username }}</td>
+                  <td>{{ user.password }}</td>
+                  <td>{{ user.email }}</td>
+                  <td>{{ user.mobile }}</td>
+                  <td>{{ user.borrow_num }}</td>
+                  <td>{{ user.is_allow_borrow }}</td>
+                  <td>{{ user.borrow_num }}</td>
+                  <td> <a href="/users/{{ user.pk }}/delete/" class="btn btn-danger">删除 </a> </td>
+                  <td> <a href="/users/{{ user.pk }}/edit/" class="btn btn-info">编辑</a>   </td>
+                </tr>
+              {% endfor %}
+              </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+    <a href="/add_book/" class="btn btn-primary">添加用户</a>
+</center>
+</body>
+</html>

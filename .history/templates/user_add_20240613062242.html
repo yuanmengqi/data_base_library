@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/bs/css/bootstrap.css">
+    <style>
+        .container{
+            margin-top:100px;
+        }
+        .btn{
+           margin-top:10px;
+        }
+    </style>
+</head>
+<body>
+
+<center> <h3>添加用户</h3> </center>
+
+<center>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 col-md-offset-7">
+            <form action="/add_user/" method="post">
+                {% csrf_token %}
+
+                <div>
+                    <label for="">姓名</label>
+                    <input type="text" class="form-control" name="name">
+                </div>
+                <div>
+                    <label for="">密码</label>
+                    <input type="text" class="form-control" name="author">
+                </div>
+                <div>
+                    <label for="">邮箱</label>
+                    <input type="text" class="form-control" name="publisher">
+                </div>
+                <div>
+                    <label for="">手机号</label>
+                    <input type="date" class="form-control" name="publish_date">
+                </div>
+                <div>
+                    <label for="">借书数量</label>
+                    <input type="text" class="form-control" name="catagoery">
+                </div>
+                <div>
+                    <label for="">是否允许借书</label>
+                    <input type="file" class="form-control" name="picture">
+                </div>
+                <div>
+                    <label for="">专业-班级</label>
+                    <input type="file" class="form-control" name="picture">
+                <input type="submit" class="btn btn-success pull-right">
+
+            </form>
+        </div>
+    </div>
+</div>
+    <a href="/book_list/" class="btn btn-primary">返回查看页面</a>
+</center>
+</body>
+</html>

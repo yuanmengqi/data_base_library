@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/bs/css/bootstrap.css">
+    <style>
+        .container{
+            margin-top:100px;
+        }
+        .btn{
+           margin-top:10px;
+        }
+    </style>
+</head>
+<body>
+
+<center> <h3>添加图书</h3> </center>
+
+<center>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 col-md-offset-7">
+            <form action="/add_book/" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                <div>
+                    <label for="">书名</label>
+                    <input type="text" class="form-control" name="name">
+                </div>
+                <div>
+                    <label for="">作者</label>
+                    <input type="text" class="form-control" name="author">
+                </div>
+                <div>
+                    <label for="">出版社</label>
+                    <input type="text" class="form-control" name="publisher">
+                </div>
+                <div>
+                    <label for="">出版日期</label>
+                    <input type="date" class="form-control" name="publish_date">
+                </div>
+                <div>
+                    <label for="">类别</label>
+                    <input type="text" class="form-control" name="catagoery">
+                </div>
+                <div>
+                    <label for="">封面图片</label>
+                    <input type="file" class="form-control" name="picture">
+                </div>
+                <input type="submit" class="btn btn-success pull-right">
+
+            </form>
+        </div>
+    </div>
+</div>
+    <a href="/book_list/" class="btn btn-primary">查询书籍页面</a>
+</center>
+</body>
+</html>

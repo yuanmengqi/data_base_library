@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/bs/css/bootstrap.css">
+    <style>
+        .container{
+            margin-top:100px;
+        }
+        .btn{
+           margin-top:10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>确认借阅</h1>
+    <p>您即将借阅以下书籍：</p>
+    <p>书籍名称: {{ book.name }}</p>
+    <p>借阅日期: {{ borrow_date }}</p>
+    <p>应归还日期: {{ return_date }}</p>
+    
+    <form action="{% url 'book_borrow' %}" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="book_name" value="{{ book.id }}">
+        <button type="submit">确认借阅</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/bs/css/bootstrap.css">
+    <style>
+        .container{
+            margin-top:100px;
+        }
+        .btn{
+           margin-top:10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>借书逾期</h1>
+    <p>对不起，您需要在归还预期图书后才能借书</p>
+    <h2>Overdue Books:</h2>
+    <ul>
+        {% for record in overdue_records %}
+            <li>{{ record.book.name }} - Due Date: {{ record.return_date }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'book_borrow' %}"><button>返回</button></a>
+</body>
+</html>

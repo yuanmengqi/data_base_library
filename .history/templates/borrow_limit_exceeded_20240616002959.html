@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/bs/css/bootstrap.css">
+    <style>
+        .container{
+            margin-top:100px;
+        }
+        .btn{
+           margin-top:10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>借阅限制</h1>
+    <p>对不起，您已达到借书数量上限，请先归还部分图书再进行借阅</p>
+    <input type="hidden" name="uname" value="{{ uname }}">
+    <input type="hidden" name="book_id" value="{{ book.id }}">
+    <a href="{% url 'book_borrow' book_id=book.id uname=uname %}"><button>返回</button></a>
+</body>
+</html>

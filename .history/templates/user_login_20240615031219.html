@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Login</title>
+    <link rel="stylesheet" href="/static/bs/css/bootstrap.css">
+    <style>
+        .container{
+            margin-top: 100px;
+        }
+        .btn{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h3>User Login</h3>
+    </center>
+
+    <center>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-md-offset-7">
+                    <form action="{% url 'book_search' %}" method="post">
+                        {% csrf_token %}
+                        <label for="password">Enter your password:</label>
+                        <input type="password" id="password" name="password" class="form-control" required>
+                        <button type="submit" class="btn btn-success">登录</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </center>
+</body>
+</html>

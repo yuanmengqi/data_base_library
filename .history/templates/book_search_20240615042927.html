@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="/static/bs/css/bootstrap.css">
+    <style>
+        .container{
+            margin-top: 100px;
+        }
+        .btn{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form action="{% url 'search_book' %}" method="post">
+        {% csrf_token %}
+        <input type="text" name="search_query" placeholder="Enter book title">
+        <button type="submit">Search</button>
+    </form>
+</body>
+</html>

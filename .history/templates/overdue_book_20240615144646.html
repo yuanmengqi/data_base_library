@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/bs/css/bootstrap.css">
+    <style>
+        .container{
+            margin-top:100px;
+        }
+        .btn{
+           margin-top:10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>借书逾期</h1>
+    <p>Sorry, you have an overdue book that needs to be returned before borrowing more books.</p>
+    <a href="{% url 'book_borrow' %}"><button>返回</button></a>
+</body>
+</html>

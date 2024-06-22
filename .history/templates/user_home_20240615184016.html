@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/bs/css/bootstrap.css">
+    <style>
+        .container{
+            margin-top:100px;
+        }
+        .btn{
+           margin-top:10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>User Information</h1>
+        <table>
+            <tr>
+                <th>序号</th>
+                <td>{{ user.id }}</td>
+            </tr>
+            <tr>
+                <th>姓名</th>
+                <td>{{ user.username }}</td>
+            </tr>
+            <tr>
+                <th>邮箱</th>
+                <td>{{ user.email }}</td>
+            </tr>
+            <tr>
+                <th>电话</th>
+                <td>{{ user.mobile }}</td>
+            </tr>
+            <tr>
+                <th>借书数量</th>
+                <td>{{ user.borrow_num }}</td>
+            </tr>
+            <tr>
+                <th>是否允许借书</th>
+                <td>{{ user.is_allow_borrow }}</td>
+            </tr>
+            <tr>
+                <th>是否管理员</th>
+                <td>{{ user.is_admin }}</td>
+            </tr>
+            <tr>
+                <th>专业-班级</th>
+                <td>{{ user.class_major }}</td>
+            </tr>
+        </table>
+        
+        <a href="{% url 'book_search' %}" class="btn btn-primary">查询图书</a>
+        <a href="book_search/" class="btn btn-danger">借书 </a>
+    </div>
+</body>
+</html>

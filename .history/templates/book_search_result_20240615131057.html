@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="/static/bs/css/bootstrap.css">
+    <style>
+        .container{
+            margin-top: 100px;
+        }
+        .btn{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    {% if context %}
+        <h2>{{ context.name }}</h2>
+        <p>Author: {{ context.author }}</p>
+        <p>Publisher: {{ context.publisher }}</p>
+        <p>Publish Date: {{ context.publish_date|date:'Y-m-d' }}</p>
+        <p>Category: {{ context.catagoery }}</p>
+        <img src="{{ context.picture.url }}" width="60px" height="60px">
+    {% else %}
+        <p>{{ error_message }}</p>
+    {% endif %}
+</body>
+</html>

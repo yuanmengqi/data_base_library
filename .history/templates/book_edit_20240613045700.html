@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/bs/css/bootstrap.css">
+    <style>
+        .container{
+            margin-top:100px;
+        }
+        .btn{
+           margin-top:10px;
+        }
+    </style>
+</head>
+<body>
+
+<center> <h3>编辑书籍信息</h3> </center>
+
+<center>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 col-md-offset-7">
+            <form action="" method="post">
+                {% csrf_token %}
+
+                <div>
+                    <label for="">书名</label>
+                    <input type="text" class="form-control" name="name" value="{{ edit_obj.name}}">
+                </div>
+                <div>
+                    <label for="">作者</label>
+                    <input type="text" class="form-control" name="author" value="{{ book.author }}">
+                </div>
+                <div>
+                    <label for="">出版社</label>
+                    <input type="text" class="form-control" name="publisher" value="{{ book.publisher }}">
+                </div>
+                <div>
+                    <label for="">出版日期</label>
+                    <input type="date" class="form-control" name="publish_date" value="{{ book.publish_date|date:'Y-m-d' }}">
+                </div>
+                <div>
+                    <label for="">类别</label>
+                    <input type="text" class="form-control" name="catagoery" value="{{ book.catagoery }}">
+                </div>
+                <div>
+                    <label for="">封面图片</label>
+                    <input type="file" class="form-control" name="picture" value="{{ book.picture }}">
+                </div>
+                <input type="submit" class="btn btn-success pull-right">
+
+            </form>
+        </div>
+    </div>
+</div>
+    <a href="/book_list/" class="btn btn-primary">返回查询页面</a>
+</center>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图书馆管理系统</title>
+    <link rel="stylesheet" href="/static/bs/css/bootstrap.css">
+    <script>TinyMCE.init({ selector:'textarea.content' });</script> 
+    <style>
+        .container{
+            margin-top:100px;
+        }
+        .btn{
+           margin-top:10px;
+        }
+    </style>
+</head>
+<body>
+
+<center> <h3>查看书籍信息</h3> </center>
+
+<center>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 col-md-offset-7">
+            <table class="table table-striped table-bordered">
+              <thead>
+                <tr>
+                  <th>书名</th>
+                  <th>作者</th>
+                  <th>出版社</th>
+                  <th>出版日期</th>
+                  <th>类别</th>
+                  <th>封面图片</th>
+                  <th></th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+              {% for book in book_list %}
+                <tr>
+                  <td>{{ book.name }}</td>
+                  <td>{{ book.author }}</td>
+                  <td>{{ book.publisher }}</td>
+                  <td>{{ book.publish_date|date:'Y-m-d' }}</td>
+                  <td>{{ book.catagoery }}</td>
+                  <td><img src="static/images/{{ book.picture.url }}" width="30px" height="30px"></td>
+                  <td> <a href="/books/{{ book.pk }}/delete/" class="btn btn-danger">删除 </a> </td>
+                  <td> <a href="/books/{{ book.pk }}/edit/" class="btn btn-info">编辑</a>   </td>
+                </tr>
+              {% endfor %}
+              </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+    <a href="/add_book/" class="btn btn-primary">添加图书</a>
+</center>
+</body>
+</html>

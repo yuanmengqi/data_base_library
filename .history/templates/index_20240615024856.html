@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to the Library Management System</title>
+    <link rel="stylesheet" href="/static/bs/css/bootstrap.css">
+    <style>
+        .container{
+            margin-top: 100px;
+        }
+        .btn{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h3>Welcome to the Library Management System</h3>
+    </center>
+
+    <center>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-md-offset-7">
+                    <form action="{% url 'user_login' %}" method="get">
+                        <button type="submit" class="btn btn-primary">Normal User</button>
+                    </form>
+                    <form action="{% url 'admin_login' %}" method="get">
+                        <button type="submit" class="btn btn-danger">Administrator</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </center>
+</body>
+</html>

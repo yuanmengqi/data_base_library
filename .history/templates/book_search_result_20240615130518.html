@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="/static/bs/css/bootstrap.css">
+    <style>
+        .container{
+            margin-top: 100px;
+        }
+        .btn{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    {% if book %}
+        <h2>{{ book.name }}</h2>
+        <p>Author: {{ book.author }}</p>
+        <p>Publisher: {{ book.publisher }}</p>
+        <p>Publish Date: {{ book.publish_date|date:'Y-m-d' }}</p>
+        <p>Category: {{ book.catagoery }}</p>
+        <img src="{{ book.picture.url }}" width="60px" height="60px">
+    {% else %}
+        <p>{{ error_message }}</p>
+    {% endif %}
+</body>
+</html>

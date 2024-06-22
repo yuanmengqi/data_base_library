@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/bs/css/bootstrap.css">
+    <style>
+        .container{
+            margin-top:100px;
+        }
+        .btn{
+           margin-top:10px;
+        }
+    </style>
+</head>
+<body>
+<body>
+    <h1>Welcome to the Library Management System</h1>
+    <form action="{% url 'user_login' %}" method="get">
+        <button type="submit">Normal User</button>
+    </form>
+    <form action="{% url 'admin_login' %}" method="get">
+        <button type="submit">Administrator</button>
+    </form>
+</body>
+</html>
